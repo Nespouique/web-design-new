@@ -6,6 +6,7 @@ import { pokedex, getPokemonById, STAT_KEYS, STAT_LABELS } from "../data/pokedex
 import type { StatKey } from "../data/pokedex";
 import StatRadar from "../components/StatRadar";
 import TypePills from "../components/TypePills";
+import { asset } from "../utils";
 
 const Battle = () => {
   const [id1, setId1] = useState("");
@@ -43,7 +44,7 @@ const Battle = () => {
             {pokemon1 && (
               <Link to={`/fiche/${pokemon1.id}`} className="battle-pokemon-link">
                 <motion.img
-                  src={`/img/${pokemon1.id}.png`}
+                  src={asset(`img/${pokemon1.id}.png`)}
                   alt={pokemon1.nom}
                   style={{ maxHeight: 160, margin: "20px auto 0", display: "block" }}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -71,7 +72,7 @@ const Battle = () => {
             {pokemon2 && (
               <Link to={`/fiche/${pokemon2.id}`} className="battle-pokemon-link">
                 <motion.img
-                  src={`/img/${pokemon2.id}.png`}
+                  src={asset(`img/${pokemon2.id}.png`)}
                   alt={pokemon2.nom}
                   style={{ maxHeight: 160, margin: "20px auto 0", display: "block" }}
                   initial={{ opacity: 0, scale: 0.8 }}

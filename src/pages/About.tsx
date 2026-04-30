@@ -1,9 +1,10 @@
 import { motion } from "motion/react";
+import { asset } from "../utils";
 
 const team = [
-  { name: "Richard", img: "/img/card-richard.jpg" },
-  { name: "Emmanuelle", img: "/img/card-emmanuelle.jpg" },
-  { name: "Elliot", img: "/img/card-elliot.jpg" },
+  { name: "Richard", img: asset("img/card-richard.jpg") },
+  { name: "Emmanuelle", img: asset("img/card-emmanuelle.jpg") },
+  { name: "Elliot", img: asset("img/card-elliot.jpg") },
 ];
 
 const About = () => {
@@ -39,7 +40,7 @@ const About = () => {
       <div style={{ marginTop: 48 }}>
         <div className="section-eyebrow">Équipe</div>
         <img
-          src="/img/team2.jpg"
+          src={asset("img/team2.jpg")}
           alt="L'équipe"
           style={{ width: "100%", borderRadius: "var(--r-lg)", marginTop: 16, marginBottom: 24, maxHeight: 320, objectFit: "cover", objectPosition: "center center" }}
         />

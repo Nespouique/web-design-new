@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { List, Swords, Info, Music } from "lucide-react";
 import { motion } from "motion/react";
+import { asset } from "../utils";
 
 const NAV_ITEMS = [
   { to: "/liste", label: "Liste", icon: List },
@@ -82,7 +83,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         </button>
         <div className="footer-copy">POKÉDEX KANTO — 2026</div>
         <audio ref={audioRef} preload="auto" loop onEnded={() => setIsPlaying(false)}>
-          <source src="/data/le_meilleur_dresseur.mp3" type="audio/mp3" />
+          <source src={asset("data/le_meilleur_dresseur.mp3")} type="audio/mp3" />
         </audio>
       </footer>
     </div>

@@ -7,7 +7,7 @@ import {
   getZoneLabel, STAT_KEYS, STAT_LABELS, type StatKey,
 } from "../data/pokedex";
 import TypePills from "../components/TypePills";
-import { formatNumber } from "../utils";
+import { formatNumber, asset } from "../utils";
 
 const SWIPE_THRESHOLD = 60;
 
@@ -67,7 +67,7 @@ const Fiche = () => {
         {/* Left: showcase (no panel wrapper) */}
         <div className="showcase-column">
           <motion.img
-            src={`/img/${pokemon.id}.png`}
+            src={asset(`img/${pokemon.id}.png`)}
             alt={pokemon.nom}
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -136,9 +136,9 @@ const Fiche = () => {
       <div className="panel map-panel">
         <div className="panel-header">Localisation</div>
         <div className={`map-layer${hasZones ? " has-zones" : ""}`}>
-          <img src="/data/zones/map.jpg" alt="Kanto" />
+          <img src={asset("data/zones/map.jpg")} alt="Kanto" />
           {hasZones && pokemon.zone.map((z) => (
-            <img key={z} className="map-overlay" src={`/data/zones/Zone_${z}.png`} alt={`Zone ${z}`} />
+            <img key={z} className="map-overlay" src={asset(`data/zones/Zone_${z}.png`)} alt={`Zone ${z}`} />
           ))}
         </div>
         <p className="map-zone-text">{zoneText}</p>
@@ -160,7 +160,7 @@ const Fiche = () => {
                   to={`/fiche/${evo.id}`}
                   className={`evolution-card${evo.id === pokemon.id ? " is-current" : ""}`}
                 >
-                  <img src={`/img/${evo.id}.png`} alt={evo.nom} />
+                  <img src={asset(`img/${evo.id}.png`)} alt={evo.nom} />
                   <h4>{evo.nom}</h4>
                   <TypePills pokemon={evo} />
                 </Link>

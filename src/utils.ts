@@ -1,5 +1,8 @@
 import type { Pokemon } from "./types";
 
+/** Resolve a public asset path with the Vite base URL */
+export const asset = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+
 export const slugify = (value: string) =>
   value
     .toLowerCase()

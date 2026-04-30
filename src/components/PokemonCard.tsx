@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import type { Pokemon } from "../types";
 import TypePills from "./TypePills";
+import { asset } from "../utils";
 
 const MotionLink = motion(Link);
 
@@ -19,7 +20,7 @@ const PokemonCard = ({ pokemon }: { pokemon: Pokemon }) => {
       </div>
       <div className="card-img-wrapper">
         <img
-          src={`/img/${pokemon.id}.png`}
+          src={asset(`img/${pokemon.id}.png`)}
           alt={pokemon.nom}
           loading="lazy"
         />
