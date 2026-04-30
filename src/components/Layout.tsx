@@ -38,6 +38,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     close();
     setGlitching(true);
     const t = setTimeout(() => setGlitching(false), 300);
